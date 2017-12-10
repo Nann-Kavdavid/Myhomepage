@@ -1,0 +1,36 @@
+body {
+    background-image: url("Web_background.jpg");
+}
+h1 {
+    color: dodgerblue;
+}
+.container{
+    width: 100px;
+}
+.container input{
+    width: 100%;
+}
+table{
+    border: 1px solid black ;
+}
+td {
+    border: 1px solid black;
+    background: blanchedalmond;
+    color: black;
+}
+th {
+    border: 1px solid black ;
+    color: black;
+    background: cadetblue;
+}
+tr {
+    cursor: pointer; transition: all .25s ease-in-out
+}
+.b1 {
+    background: white;
+}
+.selected{
+    background: red;
+    font-weight: bold;
+    color: red;
+}
