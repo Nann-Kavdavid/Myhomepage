@@ -1,26 +1,71 @@
 <html>
-    <head>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <table id="myTable">
+        <tr>
+            <th>&nbsp;</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+        </tr>
+        <?php
+        for($i = 1; $i<=9; $i++){
+            echo '<tr>';
+            echo '<th>'.$i.'段階'.'</th>';
+            for($j = 1; $j<=9; $j++){
+                if($i%2 == 0){
+                    echo '<td class="b1">'.$i*$j.'</td>';
+                }else{
+                    echo '<td>'.$i*$j.'</td>';
+                }
+            }
+            echo '</tr>';
+        }
+        ?>
+    </table>
+    <select id="selectOption">
+        <option value="1">1の段</option>
+        <option value="2">2の段</option>
+        <option value="3">3の段</option>
+        <option value="4">4の段</option>
+        <option value="5">5の段</option>
+        <option value="6">6の段</option>
+        <option value="7">7の段</option>
+        <option value="8">8の段</option>
+        <option value="9">9の段</option>
+    </select>
+    <button id="btn" onclick="display_row()" value="change_value();">Try it</button>
 
-    <h1><img src="Logo.png" alt="Logo" style="float: left; width: 40px; height: 40px">ANNKAVDAVID CO., LTD.</h1>
-    <link rel="stylesheet" href="style.css">
+    <script>
+        function display_row()
+        {
+            var index, table, button, button_value;
 
-    <body>
-        <form>
 
-            First name: <input type="text" name="firstname"><br>
-            Last name:  <input type="text" name="lastname"><br>
-
-            Gender:     <input type="radio" name="gender" value="male">M
-                        <input type="radio" name="gender" value="female">F<br>
-            Phone number:   <input type="text" name="phonenumber"><br>
-            E-mail:         <input type="email" name="email"><br>
-            Address:    <input type="text" name="address"><br>
-            Message:    <br><textarea rows="4" cols="50" name="message">Enter text here...
-                        </textarea><br>
-            <input type="submit"><br>
-
-        </form>
-    </body>
-    </head>
+            index = document.getElementById('selectOption').value;
+            table = document.getElementById('myTable');
+            button = document.getElementById('btn')
+            button_value = button.value;
+            table.rows[index].classList.toggle("selected");
+            button_value = index;
+        }
+        function change_value()
+        {
+            var index;
+            index = document.getElementById('selectOption').value;
+        }
+    </script>
+</body>
 </html>
+
+
+
 
